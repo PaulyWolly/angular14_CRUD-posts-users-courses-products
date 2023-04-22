@@ -1,0 +1,112 @@
+.container {
+  height: 800px;
+  border: 1px solid #808080;
+  margin-top: 60px;
+  overflow-x: hidden;
+}
+.scroll {
+  overflow: auto;
+}
+.edit-icons {
+  position: relative;
+  /* width: 10% !important; */
+  float: left;
+  border-bottom: none;
+  display: flex;
+}
+.table-container {
+  margin-top: 10px;
+  width: 80%;
+  height: 490px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.parent {
+  background: rgb(251, 251, 252);
+  padding: 1rem
+}
+.child {
+  border: 1px solid indigo;
+  padding: 1rem
+}
+.inline-block-child {
+  display: inline-block;
+}
+.table-header-text {
+  font-size: 20px !important;
+  color: black;
+}
+.table-header-text-padLeft {
+  font-size: 20px !important;
+  padding-left: 10px;
+  color: black;
+}
+table th {
+  background-color: lightGrey;
+  max-height: 20px
+}
+
+/* mat-sort-header-container mat-focus-indicator ng-tns-c135-3 */
+
+
+/* mat-sort-header-content ng-tns-c135-3 */
+
+.mat-column-id {
+word-wrap: break-word !important;
+white-space: unset !important;
+flex: 0 0 7% !important;
+width: 7% !important;
+overflow-wrap: break-word;
+word-wrap: break-word;
+word-break: break-word;
+-ms-hyphens: auto;
+-moz-hyphens: auto;
+-webkit-hyphens: auto;
+hyphens: auto;
+}
+.mat-column-title {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 15% !important;
+  width: 15% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-body {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 70% !important;
+  width: 70% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-action {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 5% !important;
+  width: 5% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.delete-icon {
+  position: relative;
+  right: 12px;
+  top: 8px;
+}

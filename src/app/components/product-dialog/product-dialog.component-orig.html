@@ -1,0 +1,64 @@
+<div class="form-container">
+  <h1 mat-dialog-title>Add Product Form</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="productForm">
+      <!-- form fields -->
+      <mat-form-field appearance="outline">
+        <mat-label>ProductName</mat-label>
+        <input matInput
+               formControlName="productName"
+               placeholder="Product ProductName">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <input matInput
+               formControlName="category"
+               placeholder="Product Category">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Date</mat-label>
+        <input matInput
+               formControlName="date"
+               placeholder="Product Date">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Freshness</mat-label>
+        <input matInput
+               formControlName="freshness"
+               placeholder="Product Freshness">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input matInput
+               formControlName="price"
+               placeholder="Product Price">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Comment</mat-label>
+        <textarea formControlName="comment"
+                  title="textarea"
+                  placeholder="Product Comment"
+                  matInput
+                  rows="8"
+                  cols="60"></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+
+  <div mat-dialog-actions
+       [align]="'end'">
+    <button mat-raised-button
+            color="warn"
+            mat-dialog-close>Close</button>
+    <button type="button"
+            style="margin-left: 8px;"
+            mat-raised-button
+            color="primary"
+            (click)="addProduct()">{{ actionBtn }}</button>
+  </div>
+</div>

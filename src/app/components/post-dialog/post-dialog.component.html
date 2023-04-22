@@ -1,0 +1,39 @@
+<div class="form-container">
+
+  <h1 *ngIf="!this.editData" mat-dialog-title>Add Post</h1>
+  <h1 *ngIf="this.editData" mat-dialog-title>Update Post</h1>
+
+  <div mat-dialog-content>
+    <form [formGroup]="postForm">
+      <!-- form fields -->
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput
+               formControlName="title"
+               placeholder="Post title">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Body</mat-label>
+        <textarea formControlName="body"
+                  title="textarea"
+                  placeholder="Post body"
+                  matInput
+                  rows="8"
+                  cols="60"></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+
+  <div mat-dialog-actions
+       [align]="'end'">
+    <button mat-raised-button
+            color="warn"
+            mat-dialog-close>Close</button>
+    <button type="button"
+            style="margin-left: 8px;"
+            mat-raised-button
+            color="primary"
+            (click)="addPost()">{{ actionBtn }}</button>
+  </div>
+</div>

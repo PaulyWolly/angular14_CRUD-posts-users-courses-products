@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark">
+  <div class="container-fluid">
+    <img width="40"
+         alt="Angular Logo"
+         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+    <a class="navbar-brand"
+       [routerLink]="['/init']">Angular14 - CRUD</a>
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse"
+         id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link"
+             aria-current="page"
+             [routerLink]="['/home']"
+             [routerLinkActive]="['active']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             [routerLink]="['/about']"
+             [routerLinkActive]="['active']">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             [routerLink]="['/courses']"
+             [routerLinkActive]="['active']">Courses</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link2 separator"></a>
+        </li>
+
+        <!-- <li class="nav-item">
+              <a class="nav-link"
+                (click)="setCourseValue()"
+                [routerLink]="['/courses']"
+                [routerLinkActive]="['active']">Courses</a>
+            </li> -->
+
+        <li class="nav-item">
+          <a class="nav-link"
+             (click)="setPostValue()"
+             [routerLink]="['/posts']"
+             [routerLinkActive]="['active']">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             (click)="setUserValue()"
+             [routerLink]="['/users']"
+             [routerLinkActive]="['active']">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+             (click)="setProductValue()"
+             [routerLink]="['/products']"
+             [routerLinkActive]="['active']">Products</a>
+        </li>
+      </ul>
+
+      <app-header-button *ngIf="addMode"
+            [buttonLabel]="buttonLabel"></app-header-button>
+
+    </div>
+  </div>
+</nav>

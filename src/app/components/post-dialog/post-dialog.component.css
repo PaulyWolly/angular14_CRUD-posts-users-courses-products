@@ -1,0 +1,29 @@
+mat-form-field {
+    width: 100%
+}
+.mat-datepicker-toggle-default-icon.ng-star-inserted {
+    float: right;
+}
+.md-icon-button+.md-datepicker-input-container {
+    float: right;
+    margin-top: 7px;
+}
+mat-datepicker-toggle {
+    float: right;
+    /* margin-top:7px; */
+    position: absolute;
+    bottom: 6px;
+    right: -8px;
+}
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+}
+.example-radio-button {
+    margin: 5px;
+}
+.form-container {
+    width: 500px;
+}

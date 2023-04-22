@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.padding-20 {
+    font-size: 20px;
+    padding: 20px;
+}
+.padding-10 {
+    font-size: 20px;
+    padding: 10px;
+}
+.padding-12 {
+    font-size: 20px;
+    padding: 12px;
+}
+p.padding-12 {
+    font-size: 20px;
+    margin-left: 5px;
+}
+.padding-50 {
+    font-size: 20px;
+    padding: 50px;
+}
+.padding-40 {
+    font-size: 20px;
+    padding: 40px;
+}
+.padding-30 {
+    font-size: 20px;
+    padding: 30px;
+    padding-left: 10px;
+}
+.padding-28 {
+    font-size: 20px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    padding: 28px;
+    padding-left: 42px;
+}
+a.nav-link {
+    font-size: 1.10rem;
+    position: relative;
+    top: 1px;
+}
+a.navbar-brand {
+    font-size: 22px;
+    margin-bottom: 2px
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.title-text {
+  position: absolute;
+  right: 190px;
+  top: 83px;
+  color: blue;
+}
