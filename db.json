@@ -1620,5 +1620,42 @@
       "comment": "This is it!",
       "id": 31
     }
+  ],
+  "courses": [
+    {
+      "courseName": "A Good Year",
+      "category": "Lifestyle",
+      "date": "2023-02-16T08:00:00.000Z",
+      "comment": "Fresh perspectives on Life's pursuits",
+      "id": 3
+    },
+    {
+      "courseName": "Pickles made easy",
+      "category": "Vegetables",
+      "date": "2023-02-23T08:00:00.000Z",
+      "comment": "This is a good book on learning to make pickes in differnt styles",
+      "id": 9
+    },
+    {
+      "courseName": "Android Phone guide",
+      "category": "Electronics",
+      "date": "2023-02-18T08:00:00.000Z",
+      "comment": "New Android phone guide. All you need to know.",
+      "id": 10
+    },
+    {
+      "courseName": "Cell Phone madness",
+      "category": "Electronics",
+      "date": "2023-02-17T08:00:00.000Z",
+      "comment": "Cell phones are here to stay, and they offer many benefits and also some drawbacks.",
+      "id": 11
+    },
+    {
+      "courseName": "TV control",
+      "category": "Electronics",
+      "date": "2023-02-14T08:00:00.000Z",
+      "comment": "TV has grown so much over the years to be a visual aide...",
+      "id": 15
+    }
   ]
 }

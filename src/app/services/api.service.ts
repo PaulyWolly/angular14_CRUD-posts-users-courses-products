@@ -3,6 +3,8 @@ import { Injectable, OnInit } from '@angular/core';
 import { PostInterface } from '../models/post.interface';
 import { Observable } from 'rxjs';
 import { UserInterface } from '../models/user.interface';
+import { CourseInterface } from '../models/course.interface';
+import { ProductInterface } from '../models/product.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +12,8 @@ import { UserInterface } from '../models/user.interface';
 export class ApiService implements OnInit {
   posts: PostInterface[] = [];
   users: UserInterface[] = [];
+  courses: CourseInterface[] = [];
+  products: ProductInterface[] = [];
 
   public apiUrl = 'http://localhost:9090/';
 
@@ -85,6 +89,28 @@ export class ApiService implements OnInit {
   // Delete 1 product (Delete)
   deleteProduct(id: number) {
     return this.http.delete(this.apiUrl + 'productList/' + id);
+  }
+
+  // COURSES
+
+  // Add new product (Create)
+  addCourse(data: CourseInterface) {
+    return this.http.post<any>(this.apiUrl + 'courses/', data);
+  }
+
+  // Get ALL courses (Read)
+  getCourses() {
+    return this.http.get<CourseInterface>(this.apiUrl + 'courses/');
+  }
+
+  // Update 1 course (Update)
+  updateCourse(data: CourseInterface, id: number) {
+    return this.http.put<any>(this.apiUrl + 'courses/' + id, data);
+  }
+
+  // Delete 1 course (Delete)
+  deleteCourse(id: number) {
+    return this.http.delete(this.apiUrl + 'courses/' + id);
   }
 
 

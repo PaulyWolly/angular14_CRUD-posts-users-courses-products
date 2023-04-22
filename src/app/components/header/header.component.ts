@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { UserDialogComponent } from '../user-dialog/user-dialog.component';
 import { ProductDialogComponent } from '../product-dialog/product-dialog.component';
 import { PostDialogComponent } from '../post-dialog/post-dialog.component';
+import { CourseDialogComponent } from '../course-dialog/course-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -104,6 +105,25 @@ export class HeaderComponent implements OnInit {
                 },
                 error: () => {
                   alert('Error occured while opening Product dialog');
+                }
+              });
+          }
+        });
+        break;
+      }
+      case 'Course': {
+        this.dialog.open(CourseDialogComponent, {
+          width: '37%'
+        }).afterClosed().subscribe(val => {
+          if (val === 'save') {
+            this.apiSrvc.getCourses()
+              .subscribe({
+                next: (res) => {
+                  // reload application to see new course
+                  window.location.reload();
+                },
+                error: () => {
+                  alert('Error occured while opening Course dialog');
                 }
               });
           }

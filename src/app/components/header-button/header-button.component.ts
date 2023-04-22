@@ -6,6 +6,7 @@ import { ApiService } from '../../services/api.service';
 import { PostDialogComponent } from '../post-dialog/post-dialog.component';
 import { UserDialogComponent } from '../user-dialog/user-dialog.component';
 import { ProductDialogComponent } from '../product-dialog/product-dialog.component';
+import { CourseDialogComponent } from '../course-dialog/course-dialog.component';
 // import { CourseDialogComponent } from '../course-dialog/course-dialog.component';
 
 @Component({
@@ -33,26 +34,26 @@ export class HeaderButtonComponent implements OnInit {
 
     let value = localStorage.getItem('buttonValue');
 
-    // if (value == 'Course') {
+    if (value == 'Course') {
 
-    //   this.dialog.open(CourseDialogComponent, {
-    //     width: '37%'
-    //   }).afterClosed().subscribe(val => {
-    //     if (val === 'save') {
-    //       this.dialogTitle = 'Add Course form';
-    //       this.apiSrvc.getCourses()
-    //         .subscribe({
-    //           next: (res) => {
-    //             // reload application to see new product
-    //             window.location.reload();
-    //           },
-    //           error: () => {
-    //             alert('Error occured while opening Course dialog');
-    //           }
-    //         });
-    //     }
-    //   });
-    // } else
+      this.dialog.open(CourseDialogComponent, {
+        width: '37%'
+      }).afterClosed().subscribe(val => {
+        if (val === 'save') {
+          this.dialogTitle = 'Add Course form';
+          this.apiSrvc.getCourses()
+            .subscribe({
+              next: (res) => {
+                // reload application to see new product
+                window.location.reload();
+              },
+              error: () => {
+                alert('Error occured while opening Course dialog');
+              }
+            });
+        }
+      });
+    } else
     if (value == 'User') {
       this.dialog.open(UserDialogComponent, {
         width: '37%'

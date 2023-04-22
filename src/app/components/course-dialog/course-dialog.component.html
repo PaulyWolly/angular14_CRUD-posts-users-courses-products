@@ -1,0 +1,53 @@
+<h1 *ngIf="!this.editData" mat-dialog-title>Add Course</h1>
+<h1 *ngIf="this.editData" mat-dialog-title>Update Course</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="courseForm">
+    <!-- form fields -->
+    <mat-form-field appearance="outline">
+      <mat-label>Course Name</mat-label>
+      <input matInput
+             formControlName="courseName"
+             placeholder="Name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Course Category</mat-label>
+      <mat-select placeholder="Category"
+                  formControlName="category">
+        <mat-option value="Lifestyle">Lifestyle</mat-option>
+        <mat-option value="Vegetables">Vegetables</mat-option>
+        <mat-option value="Electronics">Electronics</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input formControlName="date"
+             title="input"
+             matInput
+             [matDatepicker]="picker">
+      <mat-datepicker-toggle matIconSuffix
+                             [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Comment</mat-label>
+      <textarea formControlName="comment"
+                title="textarea"
+                matInput></textarea>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions
+     [align]="'end'">
+  <button mat-raised-button
+          color="warn"
+          mat-dialog-close>Close</button>
+  <button type="button"
+          style="margin-left: 8px;"
+          mat-raised-button
+          color="primary"
+          [disabled]="courseForm.invalid"
+          (click)="addCourse()">{{ actionBtn }}</button>
+</div>
