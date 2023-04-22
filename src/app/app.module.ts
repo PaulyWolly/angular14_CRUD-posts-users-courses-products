@@ -26,6 +26,8 @@ import { ApplicationComponent } from './components/application/application.compo
 import { InitComponent } from './components/init/init.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderButtonComponent } from './components/header-button/header-button.component';
+import { CoursesComponent } from './components/courses/courses.component';
+import { CourseDialogComponent } from './components/course-dialog/course-dialog.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { HeaderButtonComponent } from './components/header-button/header-button.
     ProductDialogComponent,
     ProductsComponent,
     ApplicationComponent,
-    InitComponent
+    InitComponent,
+    CoursesComponent,
+    CourseDialogComponent
   ],
   imports: [
     BrowserModule,
