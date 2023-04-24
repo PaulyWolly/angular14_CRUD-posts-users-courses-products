@@ -31,6 +31,15 @@
              [routerLinkActive]="['active']">About</a>
         </li>
 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" (click)="hideButton()" href="#" data-bs-toggle="dropdown" aria-expanded="false">Ng-material</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" (click)="hideButton()" href="/right-click">Right-click</a></li>
+            <li><a class="dropdown-item" href="/sidenav">Sidenav</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link2 separator"></a>
         </li>

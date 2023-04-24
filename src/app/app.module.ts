@@ -28,6 +28,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderButtonComponent } from './components/header-button/header-button.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { CourseDialogComponent } from './components/course-dialog/course-dialog.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { ContextMenuComponent } from './components/contextmenu/contextmenu.component';
+import { SidenavAutosizeExample } from './components/sidenav-autosize-example/sidenav-autosize-example';
 
 
 @NgModule({
@@ -50,7 +53,9 @@ import { CourseDialogComponent } from './components/course-dialog/course-dialog.
     ApplicationComponent,
     InitComponent,
     CoursesComponent,
-    CourseDialogComponent
+    CourseDialogComponent,
+    ContextMenuComponent,
+    SidenavAutosizeExample
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,8 @@ import { CourseDialogComponent } from './components/course-dialog/course-dialog.
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
