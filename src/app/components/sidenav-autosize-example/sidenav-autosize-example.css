@@ -1,6 +1,8 @@
 .example-container {
   height: 500px;
   border: 1px solid rgba(0, 0, 0, 0.5);
+  position: relative;
+  bottom: 22px;
 }
 .example-sidenav-content {
   display: flex;
@@ -35,4 +37,7 @@
 .example-toolbar {
   position: relative;
   bottom: 20px;
+}
+.solid-border {
+  border: 1px solid #808080;
 }
