@@ -32,7 +32,9 @@ export class HeaderComponent implements OnInit {
     if (value == 'Post' || value == 'User' || value == 'Course' || value == 'Product') {
       this.showButton();
     } else {
+      let value = localStorage.setItem('buttonVAlue', '')
       this.hideButton();
+
     }
   }
 
@@ -177,6 +179,11 @@ export class HeaderComponent implements OnInit {
     this.buttonLabel = '';
   }
 
+  setBlankValue() {
+    this.addMode = false;
+    localStorage.setItem('buttonValue', '');
+    this.buttonLabel = '';
+  }
 
   setPostValue() {
     this.addMode = true;

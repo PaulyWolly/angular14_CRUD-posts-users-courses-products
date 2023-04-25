@@ -1,0 +1,31 @@
+<div class="padding-28">
+
+  Example of right-click on dynamically generated component.
+
+  <div class="padding-28 container">
+
+    <!-- we generate a number of items dinamically-->
+    <div class="padding-top-10 cursor-pointer" *ngFor="let i of getExamples(5)">
+      <!-- when the user clicks on the div the onRightClick event is called, we pass a simple object-->
+      <div (contextmenu)="onRightClick($event, {id: i, content: 'Item generated #' + i})"
+      style="padding-top: 10px; padding-bottom: 20px;">
+        Item {{i}}
+      </div>
+    </div>
+
+    <!-- an hidden div is created to set the position of appearance of the menu-->
+    <div style="visibility: hidden; position: fixed;"
+      [style.left.px]="menuTopLeftPosition.x"
+      [style.top.px]="menuTopLeftPosition.y"
+      [matMenuTriggerFor]="rightMenu">
+    </div>
+
+    <!-- standard material menu -->
+    <mat-menu #rightMenu="matMenu">
+      <ng-template matMenuContent let-item="item">
+        <button mat-menu-item>Clicked {{item.content}}</button>
+        <button mat-menu-item (click)="fixedMenu(item.content)">Open alert</button>
+      </ng-template>
+    </mat-menu>
+  </div>
+</div>
