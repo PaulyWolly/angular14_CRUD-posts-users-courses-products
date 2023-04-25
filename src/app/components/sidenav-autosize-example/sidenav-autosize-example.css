@@ -1,15 +1,18 @@
 .example-container {
   height: 500px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  border-left: 1px solid rgba(0, 0, 0, 0.5);
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
   position: relative;
   bottom: 22px;
 }
-.example-sidenav-content {
+/* .example-sidenav-content {
   display: flex;
   height: 100%;
   align-items: center;
   justify-content: center;
-}
+  z-index: -1;
+} */
 /* .example-sidenav {
    user-select: none;
 } */
@@ -40,4 +43,6 @@
 }
 .solid-border {
   border: 1px solid #808080;
+ margin-bottom: 5px;
 }
+

@@ -5,10 +5,10 @@
   <div class="padding-28 container">
 
     <!-- we generate a number of items dinamically-->
-    <div class="cursor-pointer" *ngFor="let i of getExamples(5)">
+    <div class="padding-top-10 cursor-pointer" *ngFor="let i of getExamples(5)">
       <!-- when the user clicks on the div the onRightClick event is called, we pass a simple object-->
       <div (contextmenu)="onRightClick($event, {id: i, content: 'Item generated #' + i})"
-      style="padding-bottom: 20px;">
+      style="padding-top: 10px; padding-bottom: 20px;">
         Item {{i}}
       </div>
     </div>
@@ -24,7 +24,7 @@
     <mat-menu #rightMenu="matMenu">
       <ng-template matMenuContent let-item="item">
         <button mat-menu-item>Clicked {{item.content}}</button>
-        <button mat-menu-item (click)="fixedMenu(item.content)">Fixed menu</button>
+        <button mat-menu-item (click)="fixedMenu(item.content)">Open alert</button>
       </ng-template>
     </mat-menu>
   </div>

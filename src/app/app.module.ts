@@ -31,6 +31,7 @@ import { CourseDialogComponent } from './components/course-dialog/course-dialog.
 import { MatMenuModule } from '@angular/material/menu';
 import { ContextMenuComponent } from './components/contextmenu/contextmenu.component';
 import { SidenavAutosizeExample } from './components/sidenav-autosize-example/sidenav-autosize-example';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { SidenavAutosizeExample } from './components/sidenav-autosize-example/si
     CoursesComponent,
     CourseDialogComponent,
     ContextMenuComponent,
-    SidenavAutosizeExample
+    SidenavAutosizeExample,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
