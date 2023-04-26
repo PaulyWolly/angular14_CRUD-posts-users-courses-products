@@ -33,27 +33,27 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" (click)="setBlankValue()" href="#" data-bs-toggle="dropdown" aria-expanded="false">Ng-material</a>
-          <ul class="dropdown-menu">
-            <li><a
-              class="dropdown-item"
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+              <a class="nav-link dropdown-item"
               (click)="hideButton()"
               [routerLink]="['/right-click']"
               [routerLinkActive]="['active']">Right-click</a></li>
-            <li><a
-              class="dropdown-item"
+            <li>
+              <a class="dropdown-item nav-link"
               (click)="hideButton()"
               [routerLink]="['/sidenav']"
               [routerLinkActive]="['active']">Sidenav</a></li>
-              <li><a
-              class="dropdown-item"
+            <li>
+              <a class="dropdown-item nav-link"
               (click)="hideButton()"
               [routerLink]="['/modal']"
               [routerLinkActive]="['active']">Modal</a></li>
-              <li><a
-              class="dropdown-item"
+            <li>
+              <a class="dropdown-item nav-link"
               (click)="hideButton()"
               [routerLink]="['/mat-components']"
-              [routerLinkActive]="['active']">Mat-Components</a></li>
+              [routerLinkActive]="['active']">Components demo</a></li>
           </ul>
         </li>
 
@@ -61,31 +61,36 @@
           <a class="nav-link2 separator"></a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link"
-            (click)="setCourseValue()"
-            [routerLink]="['/courses']"
-            [routerLinkActive]="['active']">Courses</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" (click)="setBlankValue()" href="#" data-bs-toggle="dropdown" aria-expanded="false">Material - CRUD</a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li class="nav-item">
+              <a class="nav-link"
+                (click)="setCourseValue()"
+                [routerLink]="['/courses']"
+                [routerLinkActive]="['active']">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"
+                 (click)="setPostValue()"
+                 [routerLink]="['/posts']"
+                 [routerLinkActive]="['active']">Posts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"
+                 (click)="setUserValue()"
+                 [routerLink]="['/users']"
+                 [routerLinkActive]="['active']">Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"
+                 (click)="setProductValue()"
+                 [routerLink]="['/products']"
+                 [routerLinkActive]="['active']">Products</a>
+            </li>
+          </ul>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link"
-             (click)="setPostValue()"
-             [routerLink]="['/posts']"
-             [routerLinkActive]="['active']">Posts</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"
-             (click)="setUserValue()"
-             [routerLink]="['/users']"
-             [routerLinkActive]="['active']">Users</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"
-             (click)="setProductValue()"
-             [routerLink]="['/products']"
-             [routerLinkActive]="['active']">Products</a>
-        </li>
       </ul>
 
       <app-header-button *ngIf="addMode"

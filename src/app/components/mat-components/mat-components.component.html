@@ -1,75 +1,139 @@
-<p class="padding-28">Angular Material components demo page</p>
+<div class="container-main">
+  <p class="padding-28">Angular Material components demo page</p>
 
-<!-- <div>Mat Chip listbox</div> -->
-
-
-
-
-<div id="material-example">
-
-  <mat-toolbar color="primary">
-
-        <span>Material Design Rocks!</span>
-
-  </mat-toolbar>
-
-   <br/>
+  <!-- <div>Mat Chip listbox</div> -->
 
 
- <mat-card>
 
-  <h2>Buttons</h2>
-  <button mat-button>Basic</button>
-  <button mat-raised-button>Raised</button>
-  <button mat-icon-button><mat-icon>favorite</mat-icon></button>
-  <button mat-fab>Fab</button>
-  <button mat-mini-fab>mFab</button>
-  <br>
-  <br>
-  <h2>Badge</h2>
-  <button mat-raised-button
-        color="primary"
-        matBadge="14">
-      Action
-  </button>
-  <br>
-  <br>
-  <h2>Tooltip</h2>
+
+  <div id="material-example">
+
+    <mat-toolbar color="primary">
+
+          <span>Material Design Rocks!</span>
+
+    </mat-toolbar>
+
+    <br/>
+
+
+  <mat-card>
+
+    <h2>Buttons</h2>
+    <button mat-button>Basic</button>
+    <button mat-raised-button>Raised</button>
+    <button mat-icon-button><mat-icon>favorite</mat-icon></button>
+    <button mat-fab>Fab</button>
+    <button mat-mini-fab>mFab</button>
+    <br>
+    <br>
+    <h2>Badge</h2>
     <button mat-raised-button
-            matTooltip="Tooltips in Angular">
-      Tooltip
+          color="primary"
+          matBadge="14">
+        Action
     </button>
+    <br>
+    <br>
+    <h2>Tooltip</h2>
+      <button mat-raised-button
+              matTooltip="Tooltips in Angular">
+        Tooltip
+      </button>
+    <br>
+
+    <!-- <mat-chip-listbox aria-label="Fish selection">
+      <mat-chip-option>One fish</mat-chip-option>
+      <mat-chip-option>Two fish</mat-chip-option>
+      <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
+      <mat-chip-option color="warn">Warn fish</mat-chip-option>
+    </mat-chip-listbox> -->
+
+
+  </mat-card>
+
+  </div>
+
+  <!-- <p>Default Chip List</p>
+
+  <mat-chip-list aria-label="Fish selection">
+    <mat-chip color="primary" selected>
+      Primary theme chip
+    </mat-chip>
+
+    <mat-chip color="accent" selected>
+      Accent theme chip
+    </mat-chip>
+
+    <mat-chip color="warn" selected>
+      Warn theme chip
+    </mat-chip>
+
+    <mat-chip>Default theme chip </mat-chip>
+  </mat-chip-list> -->
   <br>
+  <!-- <p>Default Chip List</p>
+  <mat-chip-list aria-label="Angular material chip">
+  <mat-chip color="Angular" selected>
+  Angular material chip list
+  </mat-chip>
+  <mat-chip color="Angular" selected>
+  Angular material chip
+  </mat-chip>
+  <mat-chip color="Angular" selected>
+  Angular material chip
+  </mat-chip>
+  <mat-chip>Angular material chip</mat-chip>
+  </mat-chip-list>
+  <br><br><br>
+  <p>Angular material chip</p>
+  <mat-chip-list class="mat-chip-list-stacked"
+  aria-label="Angular material chip">
+  <mat-chip color="Angular" selected>
+  Angular material chip
+  </mat-chip>
+  <mat-chip color="Angular" selected>
+  Angular material chip
+  </mat-chip>
+  <mat-chip color="Angular" selected>
+  Angular material chip
+  </mat-chip>
+  <mat-chip>Angular material chip </mat-chip>
+  </mat-chip-list> -->
 
-   <!-- <mat-chip-listbox aria-label="Fish selection">
-    <mat-chip-option>One fish</mat-chip-option>
-    <mat-chip-option>Two fish</mat-chip-option>
-    <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
-    <mat-chip-option color="warn">Warn fish</mat-chip-option>
-  </mat-chip-listbox> -->
+  <!-- <mat-chip-list>
+    <mat-chip>Angular</mat-chip>
+    <mat-chip>Material</mat-chip>
+    <mat-chip color = "secondary" selected>chip</mat-chip>
+    <mat-chip color = "accent" selected>list</mat-chip>
+    </mat-chip-list> -->
 
 
-</mat-card>
+    <div style="overflow: hidden; margin-left: 20px; width: 450px;">
+      <h2>Angular Material Multi Select with Chips Example</h2>
+      <mat-form-field >
+        <mat-label>Select Category:</mat-label>
+        <mat-select [formControl]="categoriesControl" multiple>
 
+
+
+          <mat-option *ngFor="let category of categories" [value]="category">
+            {{ category }}
+          </mat-option>
+
+        </mat-select>
+
+      </mat-form-field>
+    </div>
+    <mat-select-trigger>
+          <div style="position: relative; left: 10px;">
+            <mat-chip-list>
+            <mat-chip *ngFor="let category of categoriesControl.value"
+              [removable]="true" (removed)="onCatRemoved(category)" color="accent" selected>
+              {{ category }}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+    </mat-select-trigger>
 </div>
-
-<!-- <p>Default Chip List</p>
-
-<mat-chip-list aria-label="Fish selection">
-	<mat-chip color="primary" selected>
-		Primary theme chip
-	</mat-chip>
-
-	<mat-chip color="accent" selected>
-		Accent theme chip
-	</mat-chip>
-
-	<mat-chip color="warn" selected>
-		Warn theme chip
-	</mat-chip>
-
-	<mat-chip>Default theme chip </mat-chip>
-</mat-chip-list> -->
-<br>
-
-
