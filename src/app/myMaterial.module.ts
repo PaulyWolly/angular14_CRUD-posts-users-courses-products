@@ -14,6 +14,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatBadgeModule } from '@angular/material/badge';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [],
@@ -31,7 +34,10 @@ import { MatSortModule } from '@angular/material/sort';
     MatRadioModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatChipsModule,
+    MatBadgeModule,
+    MatTooltipModule
   ]
 })
 export class MyMaterialModule { }

@@ -32,6 +32,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ContextMenuComponent } from './components/contextmenu/contextmenu.component';
 import { SidenavAutosizeExample } from './components/sidenav-autosize-example/sidenav-autosize-example';
 import { ModalComponent } from './components/modal/modal.component';
+import { MatComponentsComponent } from './components/mat-components/mat-components.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -57,7 +59,8 @@ import { ModalComponent } from './components/modal/modal.component';
     CourseDialogComponent,
     ContextMenuComponent,
     SidenavAutosizeExample,
-    ModalComponent
+    ModalComponent,
+    MatComponentsComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +72,8 @@ import { ModalComponent } from './components/modal/modal.component';
     FormsModule,
     HttpClientModule,
     MatDatepickerModule,
-    MatMenuModule
+    MatMenuModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

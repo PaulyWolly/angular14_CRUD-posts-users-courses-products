@@ -11,6 +11,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { ContextMenuComponent } from './components/contextmenu/contextmenu.component';
 import { SidenavAutosizeExample } from './components/sidenav-autosize-example/sidenav-autosize-example';
 import { ModalComponent } from './components/modal/modal.component';
+import { MatComponentsComponent } from './components/mat-components/mat-components.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'modal',
     component: ModalComponent
+  },
+  {
+    path: 'mat-components',
+    component: MatComponentsComponent
   },
   {
     path: 'courses',
