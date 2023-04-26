@@ -80,5 +80,6 @@
           style="margin-left: 8px;"
           mat-raised-button
           color="primary"
+          [disabled]="productForm.invalid"
           (click)="addProduct()">{{ actionBtn }}</button>
 </div>
