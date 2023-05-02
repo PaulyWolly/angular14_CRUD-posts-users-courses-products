@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { UserInterface } from '../models/user.interface';
 import { CourseInterface } from '../models/course.interface';
 import { ProductInterface } from '../models/product.interface';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class ApiService implements OnInit {
   courses: CourseInterface[] = [];
   products: ProductInterface[] = [];
 
-  public apiUrl = 'http://localhost:9090/';
+  public apiUrl = environment.API_Url;
 
   constructor(private http: HttpClient) { }
 
