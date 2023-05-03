@@ -30,3 +30,11 @@ mat-datepicker-toggle {
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48
 }
+
+.font-16 {
+  font-size: 16px;;
+}
+
+.font-18 {
+  font-size: 18px;;
+}
