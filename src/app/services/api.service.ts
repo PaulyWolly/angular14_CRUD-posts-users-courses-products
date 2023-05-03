@@ -74,22 +74,22 @@ export class ApiService implements OnInit {
 
   // Add new product (Create)
   addProduct(data: any) {
-    return this.http.post<any>(this.apiUrl + 'productList/', data);
+    return this.http.post<any>(this.apiUrl + 'products/', data);
   }
 
   // Get ALL products (Read)
   getProducts() {
-    return this.http.get<any>(this.apiUrl + 'productList/');
+    return this.http.get<any>(this.apiUrl + 'products/');
   }
 
   // Update 1 product (Update)
   updateProduct(data: any, id: number) {
-    return this.http.put<any>(this.apiUrl + 'productList/' + id, data);
+    return this.http.put<any>(this.apiUrl + 'products/' + id, data);
   }
 
   // Delete 1 product (Delete)
   deleteProduct(id: number) {
-    return this.http.delete(this.apiUrl + 'productList/' + id);
+    return this.http.delete(this.apiUrl + 'products/' + id);
   }
 
   // COURSES

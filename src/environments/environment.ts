@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_Url: 'http://localhost:9090/'
+  API_Url: 'https://json-server-pucp.herokuapp.com/',
+
 };
 
 /*
