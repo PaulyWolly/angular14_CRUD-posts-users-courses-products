@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from './services/api.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
@@ -11,7 +11,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'MaterialBootstrapStarter';
   buttonLabel: any;
 
@@ -29,7 +29,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // this.getAllProducts();
+
+
   }
+
+  ngAfterViewInit() {
+    localStorage.setItem('buttonLabel', '');
+    localStorage.setItem('buttonValue', '');
+  }
+
 
   // getAllProducts() {
   //   this.api.getProducts()

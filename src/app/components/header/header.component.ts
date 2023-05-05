@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
     if (value == 'Post' || value == 'User' || value == 'Course' || value == 'Product') {
       this.showButton();
     } else {
-      let value = localStorage.setItem('buttonVAlue', '')
+      let value = localStorage.setItem('buttonValue', '')
       this.hideButton();
 
     }
