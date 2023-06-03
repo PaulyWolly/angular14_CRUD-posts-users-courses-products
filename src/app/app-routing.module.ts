@@ -12,6 +12,8 @@ import { ContextMenuComponent } from './components/contextmenu/contextmenu.compo
 import { SidenavAutosizeExample } from './components/sidenav-autosize-example/sidenav-autosize-example';
 import { ModalComponent } from './components/modal/modal.component';
 import { MatComponentsComponent } from './components/mat-components/mat-components.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { Breadcrumb2Component } from './components/breadcrumb2/breadcrumb2.component';
 
 
 const routes: Routes = [
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'breadcrumb',
+    component: BreadcrumbComponent
+  },
+  {
+    path: 'breadcrumb2',
+    component: Breadcrumb2Component
   },
   {
     path: 'right-click',

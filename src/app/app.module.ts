@@ -34,6 +34,8 @@ import { SidenavAutosizeExample } from './components/sidenav-autosize-example/si
 import { ModalComponent } from './components/modal/modal.component';
 import { MatComponentsComponent } from './components/mat-components/mat-components.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { Breadcrumb2Component } from './components/breadcrumb2/breadcrumb2.component';
 
 
 @NgModule({
@@ -60,7 +62,9 @@ import { MatChipsModule } from '@angular/material/chips';
     ContextMenuComponent,
     SidenavAutosizeExample,
     ModalComponent,
-    MatComponentsComponent
+    MatComponentsComponent,
+    BreadcrumbComponent,
+    Breadcrumb2Component
   ],
   imports: [
     BrowserModule,
