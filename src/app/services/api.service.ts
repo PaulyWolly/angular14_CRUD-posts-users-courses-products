@@ -94,7 +94,7 @@ export class ApiService implements OnInit {
 
   // COURSES
 
-  // Add new product (Create)
+  // Add new course (Create)
   addCourse(data: CourseInterface) {
     return this.http.post<any>(this.apiUrl + 'courses/', data);
   }
