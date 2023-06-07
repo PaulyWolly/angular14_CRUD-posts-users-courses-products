@@ -19,6 +19,7 @@ export class CoursesComponent implements OnInit {
   @Input() buttonLabel!: string;
 
   courses!: CourseInterface[];
+  // set spinner to true
   isLoading = true;
 
   displayedColumns: string[] = ["id", "courseName", "category", "date", "comment", "action"];
@@ -42,7 +43,7 @@ export class CoursesComponent implements OnInit {
       .subscribe({
         next: (res: any) => {
           console.log('Our courses: ', res);
-
+          // turn off spinner
           this.isLoading = false;
 
           this.dataSource = new MatTableDataSource(res);
