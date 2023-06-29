@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { PostInterface } from '../models/post.interface';
 import { Observable } from 'rxjs';
+
+import { PostInterface } from '../models/post.interface';
 import { UserInterface } from '../models/user.interface';
 import { CourseInterface } from '../models/course.interface';
 import { ProductInterface } from '../models/product.interface';
+
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -16,7 +18,7 @@ export class ApiService implements OnInit {
   courses: CourseInterface[] = [];
   products: ProductInterface[] = [];
 
-  public apiUrl = environment.API_Url;
+  public apiUrl = environment.API_URL;
 
   constructor(private http: HttpClient) { }
 
@@ -42,7 +44,7 @@ export class ApiService implements OnInit {
   }
 
   // Delete post with id (Delete)
-  deletePost(id: PostInterface): Observable<any> {
+  deletePost(id: PostInterface) {
     console.log('Deleting posts with Id: ', id);
     return this.http.delete(this.apiUrl + 'posts/' + id);
   }

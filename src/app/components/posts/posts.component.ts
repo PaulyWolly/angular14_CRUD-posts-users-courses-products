@@ -20,6 +20,8 @@ export class PostsComponent implements OnInit {
 
   displayedColumns: string[] = ["id", "title", "body", "action"];
   dataSource!: MatTableDataSource<any>;
+  isLoading = true;
+
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -42,13 +44,17 @@ export class PostsComponent implements OnInit {
           this.dataSource = new MatTableDataSource(res);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
+          this.isLoading = false;
 
         },
         error: (res: any) => {
           alert('Error occurred while fetching posts');
+          this.isLoading = false;
         }
       });
   }
+
+  // .subscribe({ next: (res: any) => { console.log('connected to: ', res) }, error: (res: any) => { console.log('error with ', res) })
 
 
   onEditPost(row: any) {
