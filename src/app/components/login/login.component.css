@@ -1,0 +1,221 @@
+.container {
+    height: 800px;
+    border: 1px solid #808080;
+    margin-top: 60px;
+    overflow-x: hidden;
+}
+.scroll {
+    overflow: auto;
+}
+.edit-icons {
+    position: relative;
+    /* width: 10% !important; */
+    float: left;
+    border-bottom: none;
+    display: flex;
+}
+.table-container {
+    margin-top: 10px;
+    width: 80%;
+    height: 490px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.parent {
+    background: rgb(251, 251, 252);
+    padding: 1rem
+}
+.child {
+    border: 1px solid indigo;
+    padding: 1rem
+}
+.inline-block-child {
+    display: inline-block;
+}
+.table-header-text {
+    font-size: 20px !important;
+    color: black;
+}
+.table-header-text-padLeft {
+    font-size: 20px !important;
+    padding-left: 10px;
+    color: black;
+}
+table th {
+    background-color: lightGrey;
+    max-height: 20px
+}
+
+/* mat-sort-header-container mat-focus-indicator ng-tns-c135-3 */
+
+
+/* mat-sort-header-content ng-tns-c135-3 */
+
+.w-10 {
+    max-width: 10% !important;
+}
+.w-20 {
+    max-width: 20%;
+}
+.w-30 {
+    max-width: 30%;
+}
+.w-40 {
+    max-width: 40%;
+}
+.w-45 {
+    max-width: 45%;
+}
+.w-48 {
+    max-width: 48%;
+}
+.w-50 {
+    max-width: 50%;
+}
+.w-60 {
+    max-width: 60%;
+}
+.w-75 {
+    max-width: 75%;
+}
+.w-100 {
+    max-width: 100%;
+}
+.th-center {
+    text-align: center;
+}
+.th-left {
+    text-align: left;
+}
+.th-right {
+    text-align: right;
+}
+
+/* mat-sort-header-content ng-tns-c135-3 */
+.mat-column-id {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 7% !important;
+  width: 7% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  }
+.mat-column-userName {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 12% !important;
+    width: 12% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+.mat-column-firstName {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 12% !important;
+    width: 12% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+.mat-column-lastName {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-email {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-date {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 10% !important;
+    width: 10% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+.mat-column-active {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 10% !important;
+    width: 10% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+.mat-column-role {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 10% !important;
+    width: 10% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+.mat-column-action {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 8% !important;
+    width: 8% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+.delete-icon {
+    position: relative;
+    right: 12px;
+    top: 8px;
+}
+mat-sort-header.mat-header-cell.cdk-header-cell.ng-tns-c135-5.cdk-column-phone.mat-column-phone.ng-star-inserted {
+    width: 30% !important;
+}

@@ -4,6 +4,7 @@ import { PostInterface } from '../models/post.interface';
 import { Observable } from 'rxjs';
 import { UserInterface } from '../models/user.interface';
 import { CourseInterface } from '../models/course.interface';
+import { CountryInterface } from '../models/country.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -110,7 +111,11 @@ export class ApiService implements OnInit {
     return this.http.delete(this.apiUrl + 'courses/' + id);
   }
 
+  // COUNTRIES
 
+  getCountries() {
+    return this.http.get<CountryInterface>(this.apiUrl + 'countries/');
+  }
 
 
 }

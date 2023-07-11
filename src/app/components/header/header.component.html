@@ -97,7 +97,20 @@
                  [routerLink]="['/products']"
                  [routerLinkActive]="['active']">Products</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link"
+
+                 [routerLink]="['/countries']"
+                 [routerLinkActive]="['active']">Countries</a>
+            </li>
           </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             (click)="setLoginValue()"
+             [routerLink]="['/login']"
+             [routerLinkActive]="['active']">Login</a>
         </li>
 
       </ul>

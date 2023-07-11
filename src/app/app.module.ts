@@ -37,7 +37,9 @@ import { MatComponentsComponent } from './components/mat-components/mat-componen
 import { MatChipsModule } from '@angular/material/chips';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { Breadcrumb2Component } from './components/breadcrumb2/breadcrumb2.component';
-
+import { CountriesComponent } from './components/countries/countries.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
 
 
 @NgModule({
@@ -66,7 +68,10 @@ import { Breadcrumb2Component } from './components/breadcrumb2/breadcrumb2.compo
     ModalComponent,
     MatComponentsComponent,
     BreadcrumbComponent,
-    Breadcrumb2Component
+    Breadcrumb2Component,
+    CountriesComponent,
+    LoginComponent,
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,

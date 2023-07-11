@@ -14,12 +14,18 @@ import { ModalComponent } from './components/modal/modal.component';
 import { MatComponentsComponent } from './components/mat-components/mat-components.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { Breadcrumb2Component } from './components/breadcrumb2/breadcrumb2.component';
+import { CountriesComponent } from './components/countries/countries.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 const routes: Routes = [
   {
     path: 'init',
     component: InitComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'home',
@@ -68,6 +74,10 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent
+  },
+  {
+    path: 'countries',
+    component: CountriesComponent
   }
 
 ];
