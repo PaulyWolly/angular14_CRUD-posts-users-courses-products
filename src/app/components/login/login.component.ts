@@ -1,27 +1,27 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { PostInterface } from '../../models/post.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
-import { PostDialogComponent } from '../post-dialog/post-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { LoginInterface } from 'src/app/models/login.interface';
+import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+
 
 @Component({
-  selector: 'app-posts',
-  templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class PostsComponent implements OnInit {
+export class LoginComponent implements OnInit {
   @Input() buttonLabel!: string;
 
-  posts!: PostInterface[];
-
-  displayedColumns: string[] = ["id", "title", "body", "action"];
-  dataSource!: MatTableDataSource<any>;
+  login!: LoginInterface[];
   isLoading = true;
 
+  displayedColumns: string[] = ["id", "username", "firstname", "lastname", "email", "date", "active", "role", "action"];
+  dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -33,57 +33,58 @@ export class PostsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getAllPosts();
+    this.getAllLogins();
   }
 
-  getAllPosts() {
-    this.apiService.getPosts()
+  getAllLogins() {
+    this.apiService.getLogins()
       .subscribe({
         next: (res: any) => {
-          console.log('Our posts: ', res);
+          console.log('Our List of Logins: ', res);
+
+          this.isLoading = false;
+
           this.dataSource = new MatTableDataSource(res);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
-          this.isLoading = false;
 
         },
         error: (res: any) => {
-          alert('Error occurred while fetching posts');
           this.isLoading = false;
+          alert('Error occurred while fetching list of Logins');
         }
       });
   }
 
-  // .subscribe({ next: (res: any) => { console.log('connected to: ', res) }, error: (res: any) => { console.log('error with ', res) })
 
-
-  onEditPost(row: any) {
-    this.dialog.open(PostDialogComponent, {
+  onEditLogin(row: any) {
+    this.dialog.open(LoginDialogComponent, {
       width: '37%',
       data: row
     }).afterClosed().subscribe(val => {
       if (val === 'update') {
-        this.getAllPosts();
+
+        this.getAllLogins();
       }
     });
   }
 
-  onDeletePost(id: any) {
-    let text = "Are you sure you want to delete post " + id + " ?? \nOK or Cancel.";
+  onDeleteLogin(id: any) {
+    let text = "Are you sure you want to delete User with " + id + " ?? \nOK or Cancel.";
     if (confirm(text) == true) {
-      this.deleteThePost(id);
+      this.deleteTheLogin(id);
     }
   }
 
-  deleteThePost(id: any) {
-    this.apiService.deletePost(id)
+  deleteTheLogin(id: any) {
+    this.apiService.deleteLogin(id)
       .subscribe({
         next: (res) => {
-          console.log('post deleted');
-          this.getAllPosts();
+          console.log('User login deleted');
+          this.getAllLogins();
         },
         error: () => {
-          alert('Error deeleting post');
+          alert('Error deleting User Login');
         }
       });
 

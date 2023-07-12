@@ -57,7 +57,6 @@ export class ProductDialogComponent implements OnInit {
 
   addProduct() {
 
-
     if (!this.editData) {
 
       if (this.productForm.valid) {

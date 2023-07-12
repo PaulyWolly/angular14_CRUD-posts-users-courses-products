@@ -8,9 +8,8 @@
            #input>
   </mat-form-field>
   <div class="title-text">
-    <h2>Courses</h2>
+    <h2>Logins</h2>
   </div>
-
 
   <div class="mat-elevation-z8">
 
@@ -21,7 +20,7 @@
            matSortActive="id"
            matSortDirection="desc">
 
-      <!-- ID Column -->
+      <!-- ID Field -->
       <ng-container matColumnDef="id">
         <th mat-header-cell
             *matHeaderCellDef
@@ -30,25 +29,43 @@
             *matCellDef="let row"> {{row.id}} </td>
       </ng-container>
 
-      <!-- Product Name Column -->
-      <ng-container matColumnDef="courseName">
+      <!-- User Name Field -->
+      <ng-container matColumnDef="username">
         <th mat-header-cell
             *matHeaderCellDef
-            mat-sort-header><span class="table-header-text"> CourseName </span></th>
+            mat-sort-header><span class="table-header-text"> UserName </span></th>
         <td mat-cell
-            *matCellDef="let row"> {{row.courseName}} </td>
+            *matCellDef="let row"> {{row.username}} </td>
       </ng-container>
 
-      <!-- Category Column -->
-      <ng-container matColumnDef="category">
+      <!-- First Name Field -->
+      <ng-container matColumnDef="firstname">
         <th mat-header-cell
             *matHeaderCellDef
-            mat-sort-header><span class="table-header-text"> Category </span></th>
+            mat-sort-header><span class="table-header-text"> First Name </span></th>
         <td mat-cell
-            *matCellDef="let row"> {{row.category}} </td>
+            *matCellDef="let row"> {{row.firstname}} </td>
       </ng-container>
 
-      <!-- Date Column -->
+      <!-- Last Name Field -->
+      <ng-container matColumnDef="lastname">
+        <th mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header><span class="table-header-text"> Last Name </span></th>
+        <td mat-cell
+            *matCellDef="let row"> {{row.lastname}} </td>
+      </ng-container>
+
+      <!-- Email Field -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header><span class="table-header-text"> Email </span></th>
+        <td mat-cell
+            *matCellDef="let row"> {{row.email}} </td>
+      </ng-container>
+
+      <!-- Date Field -->
       <ng-container matColumnDef="date">
         <th mat-header-cell
             *matHeaderCellDef
@@ -57,16 +74,26 @@
             *matCellDef="let row"> {{row.date | date}} </td>
       </ng-container>
 
-      <!-- Comment Column -->
-      <ng-container matColumnDef="comment">
+
+      <!-- Active Field -->
+      <ng-container matColumnDef="active">
         <th mat-header-cell
             *matHeaderCellDef
-            mat-sort-header><span class="table-header-text"> Comment </span></th>
+            mat-sort-header><span class="table-header-text"> Active </span></th>
         <td mat-cell
-            *matCellDef="let row"> {{row.comment}} </td>
+            *matCellDef="let row"> {{row.active}} </td>
       </ng-container>
 
-      <!-- Action Column -->
+      <!-- Comment Field -->
+      <ng-container matColumnDef="role">
+        <th mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header><span class="table-header-text"> Role </span></th>
+        <td mat-cell
+            *matCellDef="let row"> {{row.role}} </td>
+      </ng-container>
+
+      <!-- Action fields -->
       <ng-container matColumnDef="action">
         <th mat-header-cell
             *matHeaderCellDef><span class="table-header-text-padLeft"> Action </span></th>
@@ -75,16 +102,40 @@
             class="edit-icons">
           <button mat-icon-button
                   color="primary"
-                  (click)="onEditCourse(row)">
+                  (click)="onEditLogin(row)">
             <mat-icon>edit</mat-icon>
           </button>
           <button mat-icon-button
                   color="warn"
-                  (click)="onDeleteCourse(row.id)">
+                  (click)="onDeleteLogin(row.id)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>
       </ng-container>
+
+
+
+      <!-- <ng-container matColumnDef="action">
+            <th mat-header-cell
+                *matHeaderCellDef> Action </th>
+            <td mat-cell
+                *matCellDef="let row"
+                class="edit-icons">
+              <button mat-icon-button
+                      color="primary"
+                      (click)="onEditPost(row)">
+                <mat-icon>edit</mat-icon>
+              </button>
+            </td>
+            <td mat-cell
+                *matCellDef="let row">
+              <button mat-icon-button
+                      color="warn"
+                      (click)="onDeletePost(row.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+      </ng-container> -->
 
       <tr mat-header-row
           *matHeaderRowDef="displayedColumns"></tr>

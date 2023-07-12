@@ -12,12 +12,25 @@ import { ContextMenuComponent } from './components/contextmenu/contextmenu.compo
 import { SidenavAutosizeExample } from './components/sidenav-autosize-example/sidenav-autosize-example';
 import { ModalComponent } from './components/modal/modal.component';
 import { MatComponentsComponent } from './components/mat-components/mat-components.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { Breadcrumb2Component } from './components/breadcrumb2/breadcrumb2.component';
+import { CountriesComponent } from './components/countries/countries.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginUserComponent } from './components/login-user/login-user.component';
 
 
 const routes: Routes = [
   {
+    path: '',
+    component: LoginUserComponent
+  },
+  {
     path: 'init',
     component: InitComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'home',
@@ -26,6 +39,14 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'breadcrumb',
+    component: BreadcrumbComponent
+  },
+  {
+    path: 'breadcrumb2',
+    component: Breadcrumb2Component
   },
   {
     path: 'right-click',
@@ -58,6 +79,10 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent
+  },
+  {
+    path: 'countries',
+    component: CountriesComponent
   }
 
 ];

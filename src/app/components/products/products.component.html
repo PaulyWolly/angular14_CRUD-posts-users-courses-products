@@ -1,3 +1,4 @@
+<!-- <mat-spinner *ngIf="this.isLoading" style="margin:0 auto;"></mat-spinner> -->
 <div class="table-container">
   <mat-form-field>
     <mat-label><span class="table-header-text"> Filter </span></mat-label>
@@ -138,6 +139,14 @@
             colspan="4">No data matching the filter "{{input.value}}"</td>
       </tr>
     </table>
+
+    <div *ngIf="isLoading"
+      style="margin-top: 20px; display: flex; justify-content: center; align-items: center; background: white;">
+      <mat-progress-spinner
+        color="primary"
+        mode="indeterminate">
+      </mat-progress-spinner>
+    </div>
 
     <mat-paginator [pageSizeOptions]="[5, 7]"
                    showFirstLastButtons
