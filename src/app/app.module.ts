@@ -40,6 +40,7 @@ import { Breadcrumb2Component } from './components/breadcrumb2/breadcrumb2.compo
 import { CountriesComponent } from './components/countries/countries.component';
 import { LoginComponent } from './components/login/login.component';
 import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
+import { LoginUserComponent } from './components/login-user/login-user.component';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { LoginDialogComponent } from './components/login-dialog/login-dialog.com
     Breadcrumb2Component,
     CountriesComponent,
     LoginComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    LoginUserComponent
   ],
   imports: [
     BrowserModule,

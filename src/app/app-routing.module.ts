@@ -16,9 +16,14 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
 import { Breadcrumb2Component } from './components/breadcrumb2/breadcrumb2.component';
 import { CountriesComponent } from './components/countries/countries.component';
 import { LoginComponent } from './components/login/login.component';
+import { LoginUserComponent } from './components/login-user/login-user.component';
 
 
 const routes: Routes = [
+  {
+    path: '',
+    component: LoginUserComponent
+  },
   {
     path: 'init',
     component: InitComponent
