@@ -7,7 +7,8 @@ import { PostDialogComponent } from '../post-dialog/post-dialog.component';
 import { UserDialogComponent } from '../user-dialog/user-dialog.component';
 import { ProductDialogComponent } from '../product-dialog/product-dialog.component';
 import { CourseDialogComponent } from '../course-dialog/course-dialog.component';
-// import { CourseDialogComponent } from '../course-dialog/course-dialog.component';
+import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+
 
 @Component({
   selector: 'app-header-button',
@@ -28,12 +29,33 @@ export class HeaderButtonComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
   }
 
   openDialog() {
 
     let value = localStorage.getItem('buttonValue');
 
+    if (value == 'Login') {
+
+      this.dialog.open(LoginDialogComponent, {
+        width: '37%'
+      }).afterClosed().subscribe(val => {
+        if (val === 'save') {
+          this.dialogTitle = 'Add Login form';
+          this.apiSrvc.getLogins()
+            .subscribe({
+              next: (res) => {
+                // reload application to see new product
+                window.location.reload();
+              },
+              error: () => {
+                alert('Error occured while opening Login dialog');
+              }
+            });
+        }
+      });
+    } else
     if (value == 'Course') {
 
       this.dialog.open(CourseDialogComponent, {
@@ -108,6 +130,10 @@ export class HeaderButtonComponent implements OnInit {
         }
       });
     }
+  }
+
+  setLoginValue() {
+    localStorage.setItem('buttonValue', 'Login');
   }
 
   setPostValue() {

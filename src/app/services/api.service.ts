@@ -1,11 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { PostInterface } from '../models/post.interface';
 import { Observable } from 'rxjs';
+
+import { PostInterface } from '../models/post.interface';
 import { UserInterface } from '../models/user.interface';
 import { CourseInterface } from '../models/course.interface';
 import { ProductInterface } from '../models/product.interface';
+
 import { environment } from '../../environments/environment';
+import { CountryInterface } from '../models/country.interface';
+import { LoginInterface } from '../models/login.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +20,7 @@ export class ApiService implements OnInit {
   courses: CourseInterface[] = [];
   products: ProductInterface[] = [];
 
-  public apiUrl = environment.API_Url;
+  public apiUrl = environment.API_URL;
 
   constructor(private http: HttpClient) { }
 
@@ -42,7 +46,7 @@ export class ApiService implements OnInit {
   }
 
   // Delete post with id (Delete)
-  deletePost(id: PostInterface): Observable<any> {
+  deletePost(id: PostInterface) {
     console.log('Deleting posts with Id: ', id);
     return this.http.delete(this.apiUrl + 'posts/' + id);
   }
@@ -112,6 +116,35 @@ export class ApiService implements OnInit {
   // Delete 1 course (Delete)
   deleteCourse(id: number) {
     return this.http.delete(this.apiUrl + 'courses/' + id);
+  }
+
+  // COUNTRIES
+
+  // Get all countries (read)
+  getCountries() {
+    return this.http.get<CountryInterface>(this.apiUrl + 'countries/')
+  }
+
+  // LOGIN
+
+  // Add new login (Create)
+  addLogin(data: LoginInterface) {
+    return this.http.post<any>(this.apiUrl + 'logins/', data);
+  }
+
+  // Get all logins (read)
+  getLogins() {
+    return this.http.get<LoginInterface>(this.apiUrl + 'logins/')
+  }
+
+  //  Update 1 login (update)
+  updateLogin(data: LoginInterface, id: number) {
+    return this.http.put<any>(this.apiUrl + 'logins/' + id, data)
+  }
+
+  // Delete 1 login (Delete)
+  deleteLogin(id: number) {
+    return this.http.delete(this.apiUrl + 'logins/' + id);
   }
 
 

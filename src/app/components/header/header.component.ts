@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
@@ -7,13 +7,14 @@ import { UserDialogComponent } from '../user-dialog/user-dialog.component';
 import { ProductDialogComponent } from '../product-dialog/product-dialog.component';
 import { PostDialogComponent } from '../post-dialog/post-dialog.component';
 import { CourseDialogComponent } from '../course-dialog/course-dialog.component';
+import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
   buttonLabel!: any;
   addMode: boolean = false;
 
@@ -24,12 +25,16 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.hideButton();
+  }
+
+  ngAfterViewInit(): void {
     this.checkBtnView();
   }
 
   checkBtnView() {
     let value = localStorage.getItem('buttonValue');
-    if (value == 'Post' || value == 'User' || value == 'Course' || value == 'Product') {
+    if (value == 'Login' || value == 'Post' || value == 'User' || value == 'Course' || value == 'Product' ) {
       this.showButton();
     } else {
       let value = localStorage.setItem('buttonValue', '')
@@ -56,6 +61,25 @@ export class HeaderComponent implements OnInit {
     let value = localStorage.getItem('buttonValue');
 
     switch(value) {
+      case 'Login': {
+        this.dialog.open(LoginDialogComponent, {
+          width: '37%'
+        }).afterClosed().subscribe(val => {
+          if (val === 'save') {
+            this.apiSrvc.getPosts()
+              .subscribe({
+                next: (res) => {
+                  // reload application to see new product
+                  window.location.reload();
+                },
+                error: () => {
+                  alert('Error occured while opening Login dialog');
+                }
+              });
+          }
+        });
+        break;
+      }
       case 'Post': {
         this.dialog.open(PostDialogComponent, {
           width: '37%'
@@ -183,6 +207,12 @@ export class HeaderComponent implements OnInit {
     this.addMode = false;
     localStorage.setItem('buttonValue', '');
     this.buttonLabel = '';
+  }
+
+  setLoginValue() {
+    this.addMode = true;
+    localStorage.setItem('buttonValue', 'Login');
+    this.buttonLabel = 'Login';
   }
 
   setPostValue() {

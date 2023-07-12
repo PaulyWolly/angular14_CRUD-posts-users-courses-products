@@ -1,27 +1,27 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { PostInterface } from '../../models/post.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
-import { PostDialogComponent } from '../post-dialog/post-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { CountryInterface } from 'src/app/models/country.interface';
+
+
 
 @Component({
-  selector: 'app-posts',
-  templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css']
+  selector: 'app-countries',
+  templateUrl: './countries.component.html',
+  styleUrls: ['.//countries.component.scss']
 })
-export class PostsComponent implements OnInit {
+export class CountriesComponent implements OnInit {
   @Input() buttonLabel!: string;
 
-  posts!: PostInterface[];
-
-  displayedColumns: string[] = ["id", "title", "body", "action"];
-  dataSource!: MatTableDataSource<any>;
+  products!: CountryInterface[];
   isLoading = true;
 
+  displayedColumns: string[] = ["name", "code"];
+  dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -33,60 +33,28 @@ export class PostsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getAllPosts();
+    this.getAllCountries();
   }
 
-  getAllPosts() {
-    this.apiService.getPosts()
+
+  getAllCountries() {
+    this.apiService.getCountries()
       .subscribe({
         next: (res: any) => {
-          console.log('Our posts: ', res);
+          console.log('Existing Countries: ', res);
+
+          this.isLoading = false;
+
           this.dataSource = new MatTableDataSource(res);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
-          this.isLoading = false;
 
         },
         error: (res: any) => {
-          alert('Error occurred while fetching posts');
           this.isLoading = false;
+          alert('Error occurred while fetching Countries');
         }
       });
-  }
-
-  // .subscribe({ next: (res: any) => { console.log('connected to: ', res) }, error: (res: any) => { console.log('error with ', res) })
-
-
-  onEditPost(row: any) {
-    this.dialog.open(PostDialogComponent, {
-      width: '37%',
-      data: row
-    }).afterClosed().subscribe(val => {
-      if (val === 'update') {
-        this.getAllPosts();
-      }
-    });
-  }
-
-  onDeletePost(id: any) {
-    let text = "Are you sure you want to delete post " + id + " ?? \nOK or Cancel.";
-    if (confirm(text) == true) {
-      this.deleteThePost(id);
-    }
-  }
-
-  deleteThePost(id: any) {
-    this.apiService.deletePost(id)
-      .subscribe({
-        next: (res) => {
-          console.log('post deleted');
-          this.getAllPosts();
-        },
-        error: () => {
-          alert('Error deeleting post');
-        }
-      });
-
   }
 
   applyFilter(event: Event) {

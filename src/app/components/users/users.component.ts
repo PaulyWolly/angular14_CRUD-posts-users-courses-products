@@ -18,6 +18,8 @@ import { UserDialogComponent } from '../user-dialog/user-dialog.component';
 export class UsersComponent implements OnInit {
   users!: UserInterface[];
   buttonLabel = "User";
+  isLoading = true;
+
 
   displayedColumns: string[] = ["id", "name", "email", "website", "phone", "action"];
   // displayedColumns: string[] = ["id", "name", "email", "address", "company", "website", "phone", "action"];
@@ -45,9 +47,12 @@ export class UsersComponent implements OnInit {
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
 
+          this.isLoading = false;
+
         },
         error: (res: any) => {
           alert('Error occurred while fetching users');
+          this.isLoading = false;
         }
       });
   }

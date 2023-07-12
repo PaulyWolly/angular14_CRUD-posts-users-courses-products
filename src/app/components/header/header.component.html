@@ -1,9 +1,7 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark">
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
-    <img width="40"
-         alt="Angular Logo"
-         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
-    <a class="navbar-brand"
+    <img style="height:40px; width: 40px;" src="../../../assets/img/angular_sm.svg" alt="angular svg">
+        &nbsp;&nbsp;<a class="navbar-brand"
        [routerLink]="['/init']">Angular14 Sandbox II</a>
     <button class="navbar-toggler"
             type="button"
@@ -31,6 +29,7 @@
              [routerLinkActive]="['active']">About</a>
         </li>
 
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" (click)="setBlankValue()" href="#" data-bs-toggle="dropdown" aria-expanded="false">Ng-Material</a>
           <ul class="dropdown-menu dropdown-menu-dark">
@@ -53,7 +52,17 @@
               <a class="dropdown-item nav-link"
               (click)="hideButton()"
               [routerLink]="['/mat-components']"
-              [routerLinkActive]="['active']">Components demo</a></li>
+              [routerLinkActive]="['active']">Components</a></li>
+            <li class="nav-item">
+              <a class="nav-link"
+              (click)="hideButton()"
+              [routerLink]="['/breadcrumb']"
+              [routerLinkActive]="['active']">Breadcrumb</a></li>
+              <!-- <li class="nav-item">
+                <a class="nav-link"
+                (click)="hideButton()"
+                [routerLink]="['/breadcrumb2']"
+                [routerLinkActive]="['active']">Breadcrumb2</a></li> -->
           </ul>
         </li>
 
@@ -88,7 +97,20 @@
                  [routerLink]="['/products']"
                  [routerLinkActive]="['active']">Products</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link"
+
+                 [routerLink]="['/countries']"
+                 [routerLinkActive]="['active']">Countries</a>
+            </li>
           </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             (click)="setLoginValue()"
+             [routerLink]="['/login']"
+             [routerLinkActive]="['active']">Login</a>
         </li>
 
       </ul>
